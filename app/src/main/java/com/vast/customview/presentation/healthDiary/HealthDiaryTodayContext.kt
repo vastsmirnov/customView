@@ -6,6 +6,4 @@ data class HealthDiaryTodayContext(
     val secondTitle: String? = null,
     val description: String? = null,
     val nextDate: String
-
-) {
-}
+)
