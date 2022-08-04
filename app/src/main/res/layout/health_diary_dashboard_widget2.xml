@@ -29,25 +29,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/vert_guideline"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="50dp"/>
-
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/main_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/effra_medium"
-                android:text="Спасибо!"
                 android:textColor="@color/black"
                 android:textSize="17sp"
-                app:layout_constraintStart_toStartOf="@id/vert_guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/icon"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                tools:text="Спасибо!" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/second_title"
@@ -56,36 +49,40 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/effra_medium"
-                android:text="Сегодня все заполнено!"
                 android:textColor="@color/black"
                 android:textSize="17sp"
-                app:layout_constraintStart_toEndOf="@+id/vert_guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/icon"
                 app:layout_constraintTop_toBottomOf="@+id/main_title"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                tools:text="Сегодня все заполнено!" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/effra_light_family"
-                android:text="При необходимости вы можете заполнять опросник ежедневно"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="@+id/vert_guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/icon"
                 app:layout_constraintTop_toBottomOf="@id/second_title"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                tools:text="При необходимости вы можете заполнять опросник ежедневно" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/submit_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/effra_regular_family"
                 android:paddingStart="25dp"
                 android:paddingTop="7dp"
                 android:paddingEnd="25dp"
                 android:paddingBottom="8dp"
-                android:text="Заполнить"
+                android:text="@string/health_diary_submit_button"
+                android:textAllCaps="false"
+                android:textSize="14sp"
                 app:backgroundTint="@color/black"
                 app:cornerRadius="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -93,11 +90,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/description" />
 
             <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
+                android:id="@+id/status_info_divider"
+                android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
                 android:background="#1A000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,39 +104,40 @@
                 android:id="@+id/status_info_icon"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="17dp"
-                android:background="#FF7126"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_vector"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
+                app:layout_constraintTop_toBottomOf="@+id/status_info_divider" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/status_info_next_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/effra_light_family"
-                android:text="Следующая дата заполнения:"
+                android:text="@string/hd_next_date_title"
                 android:textColor="#FF7126"
                 android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/status_info_icon"
-                app:layout_constraintTop_toBottomOf="@id/divider" />
+                app:layout_constraintTop_toBottomOf="@id/status_info_divider" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/status_info_date"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/effra_regular_family"
-                android:text="20.07 ПН"
                 android:textColor="#FF7126"
                 android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/status_info_next_date"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
+                app:layout_constraintTop_toBottomOf="@+id/status_info_divider"
+                tools:text="20.07 ПН" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
